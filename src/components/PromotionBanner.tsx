@@ -11,7 +11,7 @@ const PromotionBanner = () => {
             Llama ahora al 555 067 7546 y ahorra desde 10% en más de 100,000 hoteles en el mundo por ser socio. 
           </p>
           <button className="text-sm font-semibold text-white hover:underline">
-            Iniciar sesión
+         
           </button>
         </div>
       </div>
