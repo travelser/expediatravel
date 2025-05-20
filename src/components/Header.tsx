@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Plane, Phone } from 'lucide-react';
 
 const Header = () => {
+  const phoneNumber = '5550677546';
+
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
@@ -19,12 +21,15 @@ const Header = () => {
           </div>
           
           <div className="flex items-center">
-            <div className="flex items-center bg-[#F0F3FF] px-4 py-2 rounded-full hover:bg-[#E5E9FF] transition-colors">
+            <a 
+              href={`tel:${phoneNumber}`}
+              className="flex items-center bg-[#F0F3FF] px-4 py-2 rounded-full hover:bg-[#E5E9FF] transition-colors"
+            >
               <Phone size={18} className="text-[#1668E3] mr-2" />
               <span className="text-[#1668E3] font-medium text-sm">
-                555 067 7546
+                {phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3')}
               </span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
