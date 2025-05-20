@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Calendar, MapPin, User, Search, Building2, Plane, Package, Car, Ticket } from 'lucide-react';
 
 const tabs = [
