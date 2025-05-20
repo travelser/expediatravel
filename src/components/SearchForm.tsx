@@ -9,7 +9,9 @@ const tabs = [
   { id: 'activities', label: 'Actividades', icon: <Ticket size={18} /> }
 ];
 
-const popularDestinations = {
+type TabKey = 'stays' | 'flights' | 'cars' | 'packages' | 'activities';
+
+const popularDestinations: Record<TabKey, string[]> = {
   stays: ['Cancún', 'Ciudad de México', 'Guadalajara', 'Puerto Vallarta'],
   flights: ['Monterrey', 'Tijuana', 'Mérida', 'Los Cabos'],
   cars: ['Aeropuerto CDMX', 'Aeropuerto Cancún', 'Aeropuerto Guadalajara'],
@@ -18,13 +20,13 @@ const popularDestinations = {
 };
 
 const SearchForm = () => {
-  const [activeTab, setActiveTab] = useState('stays');
+  const [activeTab, setActiveTab] = useState<TabKey>('stays');
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [showDestinations, setShowDestinations] = useState(false);
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 max-w-5xl mx-auto -mt-8 relative z-10">
-      {/* Tabs */}
+      {/* Tabs */}  
       <div className="flex overflow-x-auto mb-6 -mx-4 px-4 md:px-0 md:mx-0">
         {tabs.map(tab => (
           <button
@@ -34,7 +36,7 @@ const SearchForm = () => {
                 ? 'bg-expedia-blue text-white' 
                 : 'bg-gray-100 text-expedia-gray hover:bg-gray-200'
             }`}
-            onClick={() => setActiveTab(tab.id)}
+            onClick={() => setActiveTab(tab.id as TabKey)}
           >
             {tab.icon}
             <span className="ml-2">{tab.label}</span>
@@ -136,7 +138,6 @@ const SearchForm = () => {
 
       {activeTab !== 'stays' && (
         <div className="p-8 text-center text-expedia-light-gray">
-          <p>Formulario de {tabs.find(t => t.id === activeTab)?.label} (Solo UI demostrativa)</p>
           <div className="mt-4 text-sm">
             <div className="font-medium mb-2">Destinos populares para {tabs.find(t => t.id === activeTab)?.label}:</div>
             <div className="flex flex-wrap justify-center gap-2">

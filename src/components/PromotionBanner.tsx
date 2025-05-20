@@ -8,7 +8,7 @@ const PromotionBanner = () => {
         <div className="flex items-center justify-center space-x-2">
           <ShieldCheck className="w-5 h-5" />
           <p className="text-sm">
-            Inicia sesión y ahorra desde 10% en más de 100,000 hoteles en el mundo por ser socio.
+            Llama ahora al 555 067 7546 y ahorra desde 10% en más de 100,000 hoteles en el mundo por ser socio. 
           </p>
           <button className="text-sm font-semibold text-white hover:underline">
             Iniciar sesión
