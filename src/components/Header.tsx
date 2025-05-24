@@ -15,7 +15,7 @@ const Header = () => {
                 <Plane size={20} className="text-[#00153D] transform -rotate-45" />
               </div>
               <span className="text-[#FCC507] font-bold text-2xl tracking-tight">
-                expedia
+                expidia
               </span>
             </Link>
           </div>
